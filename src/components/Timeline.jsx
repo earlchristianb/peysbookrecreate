@@ -102,7 +102,7 @@ const CreateStory = () => {
 						+
 					</p>
 				</div>
-				<div className='bg-gray-700 absolute bottom-0 h-12 w-full rounded-b-xl text p-4'>
+				<div className='bg-gray-700 absolute bottom-0 h-12 w-full rounded-b-xl text-xs md:text-sm p-4'>
 					<p className='text-slate-100 font-medium text-center'>Create Story</p>
 				</div>
 			</div>
