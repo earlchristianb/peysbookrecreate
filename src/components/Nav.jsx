@@ -38,8 +38,9 @@ const LeftNavSection = () => {
 			/>
 			<div className='flex items-center h-full rounded-3xl bg-zinc-700 p-1 w-36'>
 				<input
+					placeholder='Search Peysbook'
 					type='search'
-					className='bg-transparent focus:border-white focus:outline-none w-full'
+					className='bg-transparent focus:border-white focus:outline-none w-full text-xs px-2'
 					onFocus={() => {
 						setIconState(false);
 					}}

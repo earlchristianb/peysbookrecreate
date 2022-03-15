@@ -22,12 +22,13 @@ const Timeline = () => {
 				{/*Create Room*/}
 				<CreateRoom />
 				{/*POST COMPONENT*/}
-				{mockPostObject.map(({ userImage, userName, time, body }) => (
+				{mockPostObject.map(({ userImage, userName, time, body, tags }) => (
 					<PostComponent
 						name={userName}
 						time={time}
 						body={body}
 						image={userImage}
+						tags={tags}
 					/>
 				))}
 			</div>
@@ -43,22 +44,25 @@ const mockPostObject = [
 		userName: "Leni Robredo",
 		userImage:
 			"https://th.bing.com/th/id/R.1cef11976ec7828b3a2db2b515f1cdc8?rik=livWecvLzemWsg&riu=http%3a%2f%2fwww.getrealphilippines.com%2fwp-content%2fuploads%2f2019%2f06%2fLeni-Robredo-4.jpg&ehk=ETDMWVjDCOsez9k8lCWntGWN%2bS9%2baOX1YoRMu26ZYt4%3d&risl=&pid=ImgRaw&r=0",
-		body: "Im not lutang!! #AngatLahat #MalibanSaMMRmo",
+		body: "Im not lutang!! I also represent Blackpink actually Im the head of the fans club for the betterment of the Philippines ",
 		time: "16 mins",
+		tags: ["AngatLahat", " MalibanSaMMRmo", "BlackpinkLawans"],
 	},
 	{
 		userName: `Isko Moreno Aka "2 joints"`,
 		userImage:
 			"https://philnews.ph/wp-content/uploads/2022/03/Mayor-Isko-Moreno.jpg",
-		body: "Galing sa hirap, nagsumikap para umangat. Kaya dama ko ang pangangalaingan ng bawat Pilipino.  #2jointsParaSaLahat #YormeToPresidenteLetsgo",
+		body: "Galing sa hirap, nagsumikap para umangat. Kaya dama ko ang pangangalaingan ng bawat Pilipino",
 		time: "4 hrs",
+		tags: ["2jointsParaSaLahat ", "YormeToPresidenteLetsgo"],
 	},
 	{
 		userName: `Bong Bong Marcos`,
 		userImage:
 			"https://i1.wp.com/newsfeed.ph/wp-content/uploads/2016/04/bongbong-marcos.jpg?resize=696%2C464",
-		body: "I am not a corrupt Official. The sin of the father is not the sin of the son sin san chu  #BBM-SARATANDEM #ICantAttendtheDebateSorry",
+		body: "I am not a corrupt Official. The sin of the father is not the sin of the son sin san chu",
 		time: "1 day",
+		tags: ["BBM-SARATANDEM", "ICantAttendtheDebateSorry"],
 	},
 ];
 
@@ -131,7 +135,8 @@ const PostForm = () => {
 					/>
 					<input
 						type='search'
-						className=' w-full outline-none rounded-2xl bg-transparent bg-slate-700'
+						className=' w-full outline-none rounded-2xl bg-transparent bg-slate-700 px-3 placeholder-gray-300'
+						placeholder="What's on your mind Earl?"
 					/>
 				</div>
 				<div className='h-full w-full py-1 px-2 flex space-x-2 items-center justify-evenly text-gray-300 text-xs md:text-sm  '>
@@ -195,7 +200,10 @@ const PostNameComponent = ({ name, time, image }) => {
 					</div>
 					<div className='flex justify-start space-x-1 items-center'>
 						<p className='text-xs font-light'>{time} ago</p>
-						<GlobeIcon fill='whitesmoke' className='h-3 w-3 place-self-end' />
+						<GlobeIcon
+							fill='whitesmoke'
+							className='h-3 w-3 place-self-end  hover:animate-spin'
+						/>
 					</div>
 				</div>
 			</div>
@@ -217,8 +225,19 @@ const PostNameComponent = ({ name, time, image }) => {
 
 //POST BODY
 
-const PostBody = ({ postbody }) => {
-	return <article className='p-2 text-left text-xs w-full'>{postbody}</article>;
+const PostBody = ({ postbody, tags }) => {
+	return (
+		<article className='p-2 text-left text-xs w-full'>
+			<div>{postbody}</div>
+			<div className='flex space-x-2'>
+				{tags.map((tag, i) => (
+					<p className='text-blue-400 hover:underline cursor-pointer' key={i}>
+						#{tag}
+					</p>
+				))}
+			</div>
+		</article>
+	);
 };
 
 //Post Actions //lower Part of Post
@@ -263,14 +282,14 @@ const PostActions = () => {
 	);
 };
 
-const PostComponent = ({ name, time, body, image }) => {
+const PostComponent = ({ name, time, body, image, tags }) => {
 	return (
 		<section className='w-full sm:px-4 md:px-8 text-gray-300 '>
 			<div className='flex flex-col w-full px-4 bg-slate-800 rounded-md'>
 				{/*Top part of Post component*/}
 				<PostNameComponent name={name} time={time} image={image} />
 				<div className='divide-y divide-gray-600'>
-					<PostBody postbody={body} />
+					<PostBody postbody={body} tags={tags} />
 					<PostActions />
 				</div>
 			</div>
