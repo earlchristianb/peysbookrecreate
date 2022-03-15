@@ -6,7 +6,7 @@ import Timeline from "./components/Timeline";
 
 function App() {
 	return (
-		<div className='h-screen overflow-y-scroll'>
+		<div>
 			<Nav />
 			<Timeline />
 		</div>
