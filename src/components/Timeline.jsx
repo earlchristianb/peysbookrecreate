@@ -68,7 +68,7 @@ const FriendStory = ({ name }) => {
 
 const PostForm = () => {
 	return (
-		<div className='w-full px-20'>
+		<div className='w-full sm:px-4 md:px-20'>
 			<div className=' flex flex-col divide-y-2 bg-slate-800 divide-slate-700 rounded-lg p-4 h-32 justify-center '>
 				<div className='p-1 flex space-x-2'>
 					<img
@@ -81,16 +81,16 @@ const PostForm = () => {
 						className=' w-full outline-none rounded-2xl bg-transparent bg-slate-700'
 					/>
 				</div>
-				<div className='h-full w-full py-1 px-6 flex space-x-2 items-center justify-evenly text-gray-300  '>
-					<div className='h-4 flex'>
+				<div className='h-full w-full py-1 px-6 flex space-x-2 items-center justify-evenly text-gray-300 text-xs md:text-sm  '>
+					<div className='h-4 flex space-x-1'>
 						<VidCamIcon fill='maroon' />
 						<p>Live video</p>
 					</div>
-					<div className='h-4 flex'>
+					<div className='h-4 flex space-x-1'>
 						<PictureIcon fill='green' />
 						<p>Photo/video</p>
 					</div>
-					<div className='h-4 flex'>
+					<div className='h-4 flex space-x-1'>
 						<SmileyIcon fill='yellow' />
 						<p>Feeling/activity</p>
 					</div>
