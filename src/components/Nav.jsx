@@ -67,7 +67,11 @@ const MiddleNavSection = () => {
 				<HomeIcon className='h-6 w-5 cursor-pointer ' fill='gray' />
 				<VideoIcon className='h-6 w-5 cursor-pointer ' fill='gray' />
 				<ShopIcon className='h-6 w-5 cursor-pointer' fill='gray' />
-				<PeopleIcon className='h-6 w-5 cursor-pointer' fill='gray' />
+				<PeopleIcon
+					className='h-6
+				 w-9 cursor-pointer'
+					fill='gray'
+				/>
 				<GamingIcon className='h-6 w-5 cursor-pointer' fill='gray' />
 			</div>
 		</div>
