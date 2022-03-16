@@ -148,7 +148,7 @@ const PostNameComponent = ({ name, time, image }) => {
 				<img
 					alt='Poster'
 					src={image}
-					className='h-10 w-10 rounded-full cursor-pointer'
+					className='h-8 w-8 rounded-full cursor-pointer'
 				/>
 				<div className=' flex-col justify-center'>
 					<div className='text-xs font-medium hover:underline hover:cursor-pointer'>
