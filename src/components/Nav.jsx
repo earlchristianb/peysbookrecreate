@@ -15,8 +15,8 @@ import { ReactComponent as MenuIcon } from "../assets/menu1.svg";
 
 const Nav = () => {
 	return (
-		<div className='w-full bg-zinc-800 h-11 sticky'>
-			<div className='py-2 px-8 md:px-4 flex items-center justify-between md:justify-evenly h-full relative'>
+		<div className='w-full bg-zinc-800 h-11 sticky top-0 z-40 '>
+			<div className='py-2 px-8 md:px-2 flex items-center justify-between md:justify-evenly h-full relative'>
 				<LeftNavSection />
 				<MiddleNavSection />
 				<RightNavSection />
@@ -30,7 +30,7 @@ export default Nav;
 const LeftNavSection = () => {
 	const [iconState, setIconState] = useState(true);
 	return (
-		<div className='flex items-center justify-center space-x-2 w-1/5'>
+		<div className='flex items-center justify-start space-x-2 w-1/5 px-2'>
 			<img
 				src={facebook_icon}
 				alt='icon'
@@ -81,7 +81,7 @@ const MiddleNavSection = () => {
 
 const RightNavSection = () => {
 	return (
-		<div className='flex items-center justify-center space-x-1 w-1/5'>
+		<div className='flex items-center justify-end space-x-2 w-1/5 px-2'>
 			<div className='hidden md:flex justify-center items-center space-x-1 mr-5'>
 				<img
 					src='https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.6435-9/149634387_4147253648692889_8645341590660095983_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFhGM7Gm9gD1CokOi6oV6aSIWzTTil4_bIhbNNOKXj9svv98aaw4zrlybqui-WI5mPdyY6jb5f01XOhTfEp83lf&_nc_ohc=R2qRc6SqbjUAX93yKV0&_nc_ht=scontent.fcgy1-1.fna&oh=00_AT-ycdy211JKuY_8rKOF2rK_v1izpSQd06fmVItAwDyDFQ&oe=625440EB'

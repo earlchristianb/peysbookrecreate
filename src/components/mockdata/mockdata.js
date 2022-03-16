@@ -40,3 +40,46 @@ export const Names = [
 	"Holy Kaw",
 	"Hello Mundo",
 ];
+
+export const MockGroupData = [
+	{
+		id: 0,
+		groupName: "ReactJs Ph",
+	},
+	{
+		id: 1,
+		groupName: "NextJs Ph",
+	},
+	{
+		id: 2,
+		groupName: "Typescript Group",
+	},
+	{
+		id: 3,
+		groupName: "NodeJs Developers",
+	},
+	{
+		id: 4,
+		groupName: "NestJs Community",
+	},
+	{
+		id: 5,
+		groupName: "Mongodb.com Group",
+	},
+	{
+		id: 6,
+		groupName: "Tailwind Lovers",
+	},
+	{
+		id: 7,
+		groupName: "Material Ui",
+	},
+	{
+		id: 8,
+		groupName: "FullStack Developers",
+	},
+	{
+		id: 9,
+		groupName: "Programmers Codeposting",
+	},
+];

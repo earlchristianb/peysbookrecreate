@@ -13,7 +13,7 @@ import { ReactComponent as AvatarIcon } from "../../assets/avatar.svg";
 
 const TimelineMiddleComponents = () => {
 	return (
-		<div className='h-auto w-full md:w-3/5 lg:w-6/12 flex-col  mx-1 mt-2 space-y-3 '>
+		<div className=' w-full md:w-3/5 lg:w-6/12 flex-col  mx-1 mt-2 space-y-3 '>
 			{/* story */}
 			<StoryComponent />
 			{/*What's on your mind*/}
