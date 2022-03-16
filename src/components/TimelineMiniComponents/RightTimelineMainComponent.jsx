@@ -1,120 +1,71 @@
 /** @format */
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactComponent as ShopIcon } from "../../assets/shop.svg";
-import {
-	faBookmark,
-	faUsers,
-	faUser,
-	faVideoCamera,
-	faCircleChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
-import { MockGroupData } from "../mockdata/mockdata";
 
+import React from "react";
+import {
+	faEllipsis,
+	faMagnifyingGlass,
+	faPlusCircle,
+	faVideoCamera,
+} from "@fortawesome/free-solid-svg-icons";
+import { MockGroupConvoNames, Names } from "../mockdata/mockdata.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const RightTimelineMainComponent = () => {
 	return (
-		<section className='sticky top-0 left-0 w-3/12 h-screen overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-gray-400 hidden lg:block '>
-			<div className='flex flex-col items-start justify-center px-4 mt-4 space-y-2 text-gray-300 font-medium divide-y divide-gray-400 '>
-				<RightTimelineTopComponents />
-				<RightTimelineBottomComponents />
+		<section className='sticky top-0 right-0 md:w-1/5 lg:w-3/12 h-screen overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-gray-400 hidden md:block'>
+			<div className='flex flex-col items-start justify-center px-4 mt-4 space-y-2 text-gray-300 font-medium divide-y divide-gray-400  '>
+				<RightTimelineContactComponent />
+				<RightTimelineGroupConversationComponent />
 			</div>
 		</section>
 	);
 };
 
-const RightTimelineTopComponents = () => {
+export default RightTimelineMainComponent;
+
+const RightTimelineContactComponent = () => {
 	return (
-		<div className='space-y-2 mt-4'>
-			<section className='flex items-center space-x-2'>
-				<div className='flex w-12 h-12 justify-start items-center'>
-					<img
-						className='h-10 w-10 rounded-full'
-						src='https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.6435-9/149634387_4147253648692889_8645341590660095983_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFhGM7Gm9gD1CokOi6oV6aSIWzTTil4_bIhbNNOKXj9svv98aaw4zrlybqui-WI5mPdyY6jb5f01XOhTfEp83lf&_nc_ohc=R2qRc6SqbjUAX93yKV0&_nc_ht=scontent.fcgy1-1.fna&oh=00_AT-ycdy211JKuY_8rKOF2rK_v1izpSQd06fmVItAwDyDFQ&oe=625440EB'
-						alt='user'
-					/>
-				</div>
-				<p>Earl Bernardo</p>
-			</section>
-			<section className='flex items-center space-x-2'>
-				<div className='flex w-12 h-12 justify-start items-center'>
-					<FontAwesomeIcon icon={faUser} className='h-10 w-10 text-sky-500' />
-				</div>
-				<p>Friends</p>
-			</section>
-			<section className='flex items-center space-x-2'>
-				<div className='flex w-12 h-12 justify-start items-center'>
+		<div className='space-y-3 mt-4 w-full'>
+			<section className='flex w-full justify-between'>
+				<p>Contacts</p>
+				<div className='px-3 space-x-4'>
+					<FontAwesomeIcon icon={faVideoCamera} className='cursor-pointer' />
 					<FontAwesomeIcon
-						icon={faBookmark}
-						className='h-10 w-10 text-purple-700'
+						icon={faMagnifyingGlass}
+						className='cursor-pointer'
 					/>
-				</div>
-				<p>Saved</p>
-			</section>
-			<section className='flex items-center space-x-2'>
-				<div className='flex w-12 h-12 justify-start items-center'>
-					<FontAwesomeIcon icon={faUsers} className='h-10 w-10 text-gray-300' />
-				</div>
-
-				<p>Groups</p>
-			</section>
-			<section className='flex items-center justify-start space-x-2'>
-				<div className='flex w-12 h-12 justify-start items-center'>
-					<ShopIcon className='h-10 w-10 ' fill='blue' />
-				</div>
-
-				<p>Marketplace</p>
-			</section>
-			<section className='flex items-center justify-start space-x-2 '>
-				<div className='flex w-12 h-12 justify-center items-center'>
-					<FontAwesomeIcon
-						className='h-10 w-10 text-blue-400'
-						icon={faVideoCamera}
-					/>
-				</div>
-
-				<div className='space-x-2'>
-					<p>Watch</p>
-					<ul>
-						<li className='text-sm font-thin list-disc text-blue-600'>
-							9 new videos
-						</li>
-					</ul>
+					<FontAwesomeIcon icon={faEllipsis} className='cursor-pointer' />
 				</div>
 			</section>
-			<section className='flex items-center justify-start space-x-4'>
-				<div className='flex w-12 h-12 justify-center items-center'>
-					<FontAwesomeIcon className='h-8 w-8' icon={faCircleChevronDown} />
-				</div>
-
-				<p>See More</p>
-			</section>
-		</div>
-	);
-};
-
-const RightTimelineBottomComponents = () => {
-	return (
-		<div className='space-y-2 mt-4'>
-			<p className='text-left text-lg'>Your Shortcuts</p>
-			{MockGroupData.map(({ groupName, id }) => (
-				<section className='flex items-center ' id={id}>
-					<div className='flex h-12 justify-start items-center space-x-2'>
-						<div className='rounded-full h-10 w-10 flex justify-center bg-gray-500 items-center'>
-							<p>{groupName[0]}</p>
-						</div>
-						<p>{groupName}</p>
+			{Names.map((name, i) => (
+				<section
+					key={i}
+					className='flex items-center space-x-2 text-sm font-normal'>
+					<div className='flex w-8 h-8 justify-center items-center rounded-full bg-gray-500 '>
+						<p>{name[0]}</p>
 					</div>
+					<p>{name}</p>
 				</section>
 			))}
-			<section className='flex items-center justify-start space-x-4'>
-				<div className='flex w-12 h-12 justify-center items-center'>
-					<FontAwesomeIcon className='h-8 w-8' icon={faCircleChevronDown} />
-				</div>
-
-				<p>See More</p>
-			</section>
 		</div>
 	);
 };
 
-export default RightTimelineMainComponent;
+const RightTimelineGroupConversationComponent = () => {
+	return (
+		<div className='space-y-3 mt-4 w-3/4'>
+			<p>Group Conversations</p>
+			{MockGroupConvoNames.map((convoNames, i) => (
+				<div key={i} className='flex space-x-2 text-sm font-normal'>
+					<div className='flex justify-center items-center rounded-full w-8 h-8 bg-gray-500'>
+						{convoNames[0]}
+					</div>
+					<p>{convoNames}</p>
+				</div>
+			))}
+			<div className='flex space-x-2'>
+				<FontAwesomeIcon icon={faPlusCircle} className='h-8 w-8 rounded-full' />
+				<p>Create New Group</p>
+			</div>
+		</div>
+	);
+};

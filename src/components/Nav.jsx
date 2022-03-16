@@ -16,7 +16,7 @@ import { ReactComponent as MenuIcon } from "../assets/menu1.svg";
 const Nav = () => {
 	return (
 		<div className='w-full bg-zinc-800 h-11 sticky top-0 z-40 '>
-			<div className='py-2 px-8 md:px-2 flex items-center justify-between md:justify-evenly h-full relative'>
+			<div className='py-2 px-2 flex items-center justify-between md:justify-evenly h-full relative'>
 				<LeftNavSection />
 				<MiddleNavSection />
 				<RightNavSection />
@@ -36,8 +36,9 @@ const LeftNavSection = () => {
 				alt='icon'
 				className='h-8 w-8 rounded-full cursor-pointer '
 			/>
-			<div className='flex items-center h-full rounded-3xl bg-zinc-700 p-1 w-36'>
+			<div className='hidden md:flex items-center  h-full rounded-3xl bg-zinc-700 p-1 w-36'>
 				<input
+					id='searchField'
 					placeholder='Search Peysbook'
 					type='search'
 					className='bg-transparent focus:border-white focus:outline-none w-full text-xs px-2'
@@ -50,6 +51,8 @@ const LeftNavSection = () => {
 				<img
 					onClick={(e) => {
 						e.preventDefault();
+						setIconState(false);
+						document.getElementById("searchField").focus();
 					}}
 					src={search}
 					alt='search'
