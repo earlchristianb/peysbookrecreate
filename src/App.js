@@ -6,7 +6,7 @@ import Timeline from "./components/Timeline";
 
 function App() {
 	return (
-		<div>
+		<div className=''>
 			<Nav />
 			<Timeline />
 		</div>
